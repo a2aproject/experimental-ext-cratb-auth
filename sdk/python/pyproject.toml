@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a2a-agentic-id-sdk"
+version = "0.1.0"
+description = "A2A Protocol Agentic Identity Credentials Extension SDK (v0.1, dc+sd-jwt)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Google & Thales Agentic ID Team", email = "agentic-id@example.com" }
+]
+dependencies = [
+    "pydantic>=2.4.0",
+    "pyjwt>=2.15.1",
+    "cryptography>=50.0.2",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "respx>=0.20.0",
+]

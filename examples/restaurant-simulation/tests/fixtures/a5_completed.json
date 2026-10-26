@@ -1,0 +1,24 @@
+{
+  "jsonrpc": "2.0",
+  "id": "req-002",
+  "result": {
+    "task": {
+      "id": "58bf6c69-4b2b-4dbf-b1fc-e3637c7185a7",
+      "contextId": "000698de-f721-4eeb-974a-f23b73a73ac2",
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "message": {
+          "messageId": "8f2e7b1a-9c4d-4e2b-a1b3-c5d6e7f8a9b0",
+          "taskId": "58bf6c69-4b2b-4dbf-b1fc-e3637c7185a7",
+          "contextId": "000698de-f721-4eeb-974a-f23b73a73ac2",
+          "role": "ROLE_AGENT",
+          "parts": [
+            {
+              "text": "<result of original request>"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

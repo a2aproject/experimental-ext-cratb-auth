@@ -1,0 +1,27 @@
+{
+  "jsonrpc": "2.0",
+  "id": "req-002",
+  "method": "SendMessage",
+  "params": {
+    "message": {
+      "messageId": "5c7424ff-b67a-4694-9835-d7b6218fd663",
+      "taskId": "58bf6c69-4b2b-4dbf-b1fc-e3637c7185a7",
+      "contextId": "000698de-f721-4eeb-974a-f23b73a73ac2",
+      "role": "ROLE_USER",
+      "parts": [
+        {
+          "text": "Identity response."
+        }
+      ],
+      "metadata": {
+        "https://github.com/a2aproject/experimental-ext-cratb-auth/tree/main/v1": {
+          "vp_token": {
+            "agent_identity": [
+              "<Issuer-signed JWT>~<Disclosure name>~<Disclosure owner>~<Disclosure description>~<KB-JWT>"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
