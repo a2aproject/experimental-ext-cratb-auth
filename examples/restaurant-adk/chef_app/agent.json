@@ -1,0 +1,41 @@
+{
+  "name": "chef_agent",
+  "description": "Kitchen fulfillment agent. Verifies the Front-of-House agent's employee credential, calls the Kitchen API to prepare the order, and negotiates ingredient substitutions when a resource is unavailable. Never talks to the customer or the Front-of-House agent's caller directly.",
+  "version": "1.0.0",
+  "supportedInterfaces": [
+    {
+      "url": "http://127.0.0.1:8002/a2a/chef_app",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "https://github.com/a2aproject/experimental-ext-cratb-auth/tree/main/v1",
+        "description": "Requires a Verifiable Presentation of the caller's employee credential before processing requests.",
+        "required": true,
+        "params": {
+          "vp_formats_supported": {
+            "dc+sd-jwt": {
+              "sd-jwt_alg_values": ["ES256"],
+              "kb-jwt_alg_values": ["ES256"]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {
+      "id": "prepare_order",
+      "name": "prepare_order",
+      "description": "Accept a finalized order from the Front-of-House agent, prepare it via the Kitchen API, and propose an ingredient substitution if a required ingredient is unavailable.",
+      "tags": ["order", "kitchen", "fulfillment", "identity"]
+    }
+  ]
+}

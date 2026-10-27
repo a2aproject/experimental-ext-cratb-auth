@@ -1,0 +1,62 @@
+{
+  "jsonrpc": "2.0",
+  "id": "req-001",
+  "result": {
+    "task": {
+      "id": "58bf6c69-4b2b-4dbf-b1fc-e3637c7185a7",
+      "contextId": "000698de-f721-4eeb-974a-f23b73a73ac2",
+      "status": {
+        "state": "TASK_STATE_AUTH_REQUIRED",
+        "message": {
+          "messageId": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+          "taskId": "58bf6c69-4b2b-4dbf-b1fc-e3637c7185a7",
+          "contextId": "000698de-f721-4eeb-974a-f23b73a73ac2",
+          "role": "ROLE_AGENT",
+          "parts": [
+            {
+              "text": "Identity verification required."
+            }
+          ],
+          "metadata": {
+            "https://github.com/a2aproject/experimental-ext-cratb-auth/tree/main/v1": {
+              "nonce": "a20e461a-f274-4bd7-abf4-85a9942b9564",
+              "dcql_query": {
+                "credentials": [
+                  {
+                    "id": "agent_identity",
+                    "format": "dc+sd-jwt",
+                    "meta": {
+                      "vct_values": [
+                        "https://github.com/a2aproject/experimental-ext-cratb-auth/tree/main/v1"
+                      ]
+                    },
+                    "claims": [
+                      {
+                        "path": [
+                          "name"
+                        ]
+                      },
+                      {
+                        "path": [
+                          "description"
+                        ]
+                      },
+                      {
+                        "path": [
+                          "owner"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "client_id": "a2a_agent_card:https://verifier.example.com/.well-known/agent-card.json",
+              "response_uri": "https://verifier.example.com/a2a",
+              "response_mode": "a2a_metadata"
+            }
+          }
+        }
+      }
+    }
+  }
+}

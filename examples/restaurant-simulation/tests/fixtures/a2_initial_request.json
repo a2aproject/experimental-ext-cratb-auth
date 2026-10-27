@@ -1,0 +1,30 @@
+{
+  "jsonrpc": "2.0",
+  "id": "req-001",
+  "method": "SendMessage",
+  "params": {
+    "message": {
+      "messageId": "4af26b11-7bcf-43a8-bfe4-ae6f4a2d06d6",
+      "role": "ROLE_USER",
+      "parts": [
+        {
+          "text": "Hello, please process my request."
+        }
+      ],
+      "metadata": {
+        "https://github.com/a2aproject/experimental-ext-cratb-auth/tree/main/v1": {
+          "vp_formats_supported": {
+            "dc+sd-jwt": {
+              "sd-jwt_alg_values": [
+                "ES256"
+              ],
+              "kb-jwt_alg_values": [
+                "ES256"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

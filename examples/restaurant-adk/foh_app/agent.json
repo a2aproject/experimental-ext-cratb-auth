@@ -1,0 +1,41 @@
+{
+  "name": "foh_agent",
+  "description": "Front-of-House agent. Verifies the customer's voucher and identity credentials, coordinates order redemption with the chef agent, and mediates any negotiation back to the customer. Never talks to the human customer directly.",
+  "version": "1.0.0",
+  "supportedInterfaces": [
+    {
+      "url": "http://127.0.0.1:8001/a2a/foh_app",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "https://github.com/a2aproject/experimental-ext-cratb-auth/tree/main/v1",
+        "description": "Requires a Verifiable Presentation of the redemption voucher before processing requests.",
+        "required": true,
+        "params": {
+          "vp_formats_supported": {
+            "dc+sd-jwt": {
+              "sd-jwt_alg_values": ["ES256"],
+              "kb-jwt_alg_values": ["ES256"]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {
+      "id": "redeem_voucher",
+      "name": "redeem_voucher",
+      "description": "Accept a voucher redemption request from the customer agent, verify the voucher's Verifiable Presentation, forward the order to the chef agent, and relay any negotiation (e.g. ingredient substitution) back to the customer.",
+      "tags": ["order", "front-of-house", "routing", "identity"]
+    }
+  ]
+}
